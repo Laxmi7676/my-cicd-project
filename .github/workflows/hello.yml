@@ -6,8 +6,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  use-secret:
+  test-matrix:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [11, 17, 21]
     steps:
-      - name: Print secret
-        run: echo "My secret is ${{ secrets.MY_SECRET_MESSAGE }}"
+      - name: Test on Java ${{ matrix.java }}
+        run: echo "Running tests on Java version ${{ matrix.java }}"
