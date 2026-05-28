@@ -27,3 +27,14 @@ jobs:
 
       - name: Check available memory
         run: free -h
+   
+   failing-job:
+    runs-on: ubuntu-latest
+    needs: check-system
+    steps:
+      - name: This will fail
+        run: exit 1
+
+      - name: This will never run
+        run: echo "I am unreachable"
+
