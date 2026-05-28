@@ -17,8 +17,8 @@ jobs:
 
       - name: Show folder structure
         run: ls -la
-   
-   check-system:
+
+  check-system:
     runs-on: ubuntu-latest
     needs: say-hello
     steps:
