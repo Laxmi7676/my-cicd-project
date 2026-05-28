@@ -17,3 +17,13 @@ jobs:
 
       - name: Show folder structure
         run: ls -la
+   
+   check-system:
+    runs-on: ubuntu-latest
+    needs: say-hello
+    steps:
+      - name: Check OS
+        run: uname -a
+
+      - name: Check available memory
+        run: free -h
